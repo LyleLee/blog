@@ -1,0 +1,38 @@
+﻿doctype html
+html(lang="zh-CN")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		//-其他的meta请放在后面
+		title= title
+		link(rel="icon" href="/images/LOGO.png")
+		link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
+		link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
+		link(rel="stylesheet" href="/stylesheets/starter-template.css")
+	body
+		nav.navbar.navbar-inverse.navbar-fixed-top
+			div.container
+				div.navbar-header
+					a.navbar-brand(href="#") Swing the Sword 
+				div#navbar.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li.active
+							a(href="#") Home
+						li
+							a(href="about") About
+						li
+							a(href="Contact") Contact
+		div.container
+			div.starter-template
+				h1 哈哈哈哈啊哈哈
+				p.lead
+					include lyric
+		p= message
+		|
+		|
+		|
+		p
+			这是网页的底部
+		script(src="/javascripts/jquery-1.12.3.min.js")
+		script(src="/javascripts/bootstrap.min.js")
+		//- fd
