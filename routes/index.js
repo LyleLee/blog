@@ -4,10 +4,10 @@ var router = express.Router();
 var work=require('work');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('all', { title: '李先发个人博客',message:'我的个人主页成功搭建了!' });
+  res.render('home', { title: '李先发个人博客',message:'我的个人主页成功搭建了!' });
 });
 
-router.get('/about', function(req, res, next) {
+router.get('/edit', function(req, res, next) {
   console.log("about.....\n");
   res.render('edit', { title: '李先发个人博客',message:'我的个人主页成功搭建了!' });
 });

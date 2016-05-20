@@ -2,9 +2,27 @@ html(lang="zh-CN")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		//-ÆäËûµÄmetaÇë·ÅÔÚºóÃæ
+		//-å…¶ä»–çš„metaè¯·æ”¾åœ¨åé¢
 		title= title
 		link(rel="icon" href="/images/LOGO.png")
 		link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
 		link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
 		link(rel="stylesheet" href="/stylesheets/starter-template.css")
+	body
+		nav.navbar.navbar-inverse.navbar-fixed-top
+			div.container
+				div.navbar-header
+					a.navbar-brand(href="#") Lyle Space 
+				div#navbar.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li.active
+							a(href="/") ä¸»é¡µ
+						li
+							a(href="/home") åšå®¢åˆ—è¡¨
+						li
+							a(href="/edit") å‘è¡¨æ–‡ç« 
+						li
+							a(href="#") å…³äºä½œè€…
+						li
+							a(href="/login") ç™»é™†
+		

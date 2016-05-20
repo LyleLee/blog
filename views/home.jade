@@ -1,38 +1,4 @@
-﻿doctype html
-html
-	head
-		title= title
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(charset="utf-8")
-		link(rel="stylesheet", href="/stylesheets/css/bootstrap.min.css")
-		link(rel="stylesheet", href="/stylesheets/css/bootstrap-theme.min.css")
-	body
-		br
-		div.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-			div.nav-collapse(style="height: auto;")
-				ul.nav.navbar-nav
-					li
-						a(href="#") 
-					li
-						img(src="/images/100.png" width="50" height="50") 
-					li
-						a(href="#") 主页
-					li
-						a(href="#") 文章列表
-					li
-						a(href="#") 实验室
-					li
-						a(href="#") 作者简介
-					li
-						a(href="#") 图片墙
-		- var i=10
-		ul
-			while i>0
-				li
-				-i--
-		p
-				楼主好人,好人一生平安 
-				广西壮族自治区南宁市宾阳县和吉镇三六村6号 
-			//- 输出输出输出
-		p= message
-		//-fd
+doctype html
+include 1nav
+include 2body
+include 3footer

@@ -1,46 +1,47 @@
-doctype html
-html(lang="zh-CN")
-	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		//-其他的meta请放在后面
-		title= title
-		link(rel="icon" href="/images/LOGO.png")
-		link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
-		link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
-		link(rel="stylesheet" href="/stylesheets/starter-template.css")
-	body
-		nav.navbar.navbar-inverse.navbar-fixed-top
-			div.container
-				div.navbar-header
-					a.navbar-brand(href="#") Swing the Sword 
-				div#navbar.collapse.navbar-collapse
-					ul.nav.navbar-nav
-						li.active
-							a(href="#") Home
-						li
-							a(href="about") About
-						li
-							a(href="Contact") Contact
-		div.container
-			div.starter-template
-				h1 哈哈哈哈哈哈哈哈哈哈
-				p.lead
-					你好,现在开始写博客
-		div.container
-			//-加载编辑器的容器
-			script#inputbox(name="content" type="text/plain" style="width:900px") 快点来输入一千个字
-		//-配置文件
-		p= message
-		//-加载ueditor
-	
-		
-		script(type="text/javascript" src="/ueditor/ueditor.config.js")
-		//-编辑器源码文件
-		script(type="text/javascript" src="/ueditor/ueditor.all.js")
-		//-实例化编辑器
-		script(type="text/javascript").
-			var ue= UE.getEditor('inputbox');
-		script(src="/javascripts/jquery-1.12.3.min.js")
-		script(src="/javascripts/bootstrap.min.js")
-		//- fd
+include 1nav
+br
+br
+div.container
+	//-加载编辑器的容器
+	div.row
+		div.col-xs-12.col-lg-10
+			form(role = "form"  action = "/edit" method = "post")
+				div.form-group
+					br
+					div.row
+						div.col-xs-4.col-lg-2
+							label
+								文章标题:
+						div.col-xs-8.col-lg-10
+							input#articleID(type = "text" placeholder = "请输入博客标题").form-control
+					br
+					div.row
+						div.col-xs-4.col-lg-2
+							label
+								您的称呼:
+							br
+						div.col-xs-8.col-lg-10
+							input#authorName(type = "text" placeholder = "请输入您的称呼").form-control
+					br
+					br
+					div.row
+						div.col-xs-12.col-lg-12
+							script#inputbox(name="content" type="text/plain" style="width:1000 height:600") 快点来输入一千个字
+					br
+					div.row
+						div.col-xs-10.col-lg-11
+						div.col-xs-2.col-lg-1
+							input(name = "submitButton" type = "button" value = "提交" width = 50)
+p= message
+//-加载ueditor
+
+
+script(type="text/javascript" src="/ueditor/ueditor.config.js")
+//-编辑器源码文件
+script(type="text/javascript" src="/ueditor/ueditor.all.js")
+//-实例化编辑器
+script(type="text/javascript").
+	var ue= UE.getEditor('inputbox');
+script(src="/javascripts/jquery-1.12.3.min.js")
+script(src="/javascripts/bootstrap.min.js")
+//- fd
