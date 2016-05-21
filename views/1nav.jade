@@ -8,12 +8,30 @@ html(lang="zh-CN")
 		link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
 		link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
 		link(rel="stylesheet" href="/stylesheets/starter-template.css")
+		script(type = "text/javascript").
+			window.onload=function(){
+				var navbarElement = document.getElementsByName('mybar');
+				var navbarList = navbarElement[0].getElementsByTagName('li');
+				for(var i=0; i<navbarList.length;i++)
+				{
+					navbarList[i].className = "";
+					console.log("当前路径是:"+window.location.href);
+					console.log("准备匹配: "+navbarList[i].getElementsByTagName('a')[0].href+"\n");
+					if(navbarList[i].getElementsByTagName('a')[0].href.indexOf(window.location.href)>=0)//说明存在这个标签
+					{
+						navbarList[i].className = "active";
+						console.log("匹配");
+						return 0;
+						
+					}
+				}
+			}
 	body
 		nav.navbar.navbar-inverse.navbar-fixed-top
 			div.container
 				div.navbar-header
 					a.navbar-brand(href="#") Lyle Space 
-				div#navbar.collapse.navbar-collapse
+				div#navbar.collapse.navbar-collapse(name = 'mybar')
 					ul.nav.navbar-nav
 						li.active
 							a(href="/") 主页
