@@ -13,7 +13,7 @@ div.container
 							label
 								文章标题:
 						div.col-xs-8.col-lg-10
-							input#articleID(type = "text" placeholder = "请输入博客标题").form-control
+							input#articleID(name = "articleTittle" type = "text" placeholder = "请输入博客标题").form-control
 					br
 					div.row
 						div.col-xs-4.col-lg-2
@@ -21,17 +21,17 @@ div.container
 								您的称呼:
 							br
 						div.col-xs-8.col-lg-10
-							input#authorName(type = "text" placeholder = "请输入您的称呼").form-control
+							input#authorName(name = "articleAuthor" type = "text" placeholder = "请输入您的称呼").form-control
 					br
 					br
 					div.row
 						div.col-xs-12.col-lg-12
-							script#inputbox(name="content" type="text/plain" style="width:1000 height:600") 快点来输入一千个字
+							script#inputbox(name="articleBody" type="text/plain" style="width:1000 height:600") 快点来输入一千个字
 					br
 					div.row
 						div.col-xs-10.col-lg-11
 						div.col-xs-2.col-lg-1
-							input(name = "submitButton" type = "button" value = "提交" width = 50)
+							input(name = "submitButton" type = "submit" value = "提交" width = 100)
 p= message
 //-加载ueditor
 
