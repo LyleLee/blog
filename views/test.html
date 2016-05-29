@@ -12,13 +12,14 @@
     <script type="text/javascript">
 window.onload=function(){
         var navbarElement = document.getElementsByName(&#39;mybar&#39;);
-        var navbarList = navbarElement[0].getElementsByTagName(&#39;a&#39;);
+        var navbarList = navbarElement[0].getElementsByTagName(&#39;li&#39;);
         for(var i=0; i&lt;navbarList.length;i++)
         {
                 navbarList[i].className = &quot;&quot;;
                 console.log(&quot;当前路径是:&quot;+window.location.href);
-                console.log(&quot;准备匹配: &quot;+navbarList[i]+&quot;\n&quot;);
-                if(navbarList[i].toString().indexOf(window.location.href)&gt;=0)//说明存在这个标签
+                console.log(&quot;准备匹配: &quot;+navbarList[i].getElementsByTagName(&#39;a&#39;)[0].href+&quot;\n&quot;);
+               
+if(navbarList[i].getElementsByTagName(&#39;a&#39;)[0].href.indexOf(window.location.href)&gt;=0)//说明存在这个标签
                 {
                         navbarList[i].className = &quot;active&quot;;
                         console.log(&quot;匹配&quot;);
@@ -56,60 +57,15 @@ window.onload=function(){
         </div>
       </div>
     </nav>
-    <br />
-    <br />
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-lg-10">
-          <form role="form" action="/edit" method="post">
-            <div class="form-group">
-              <br />
-              <div class="row">
-                <div class="col-xs-4 col-lg-2">
-                  <label>文章标题:</label>
-                </div>
-                <div class="col-xs-8 col-lg-10">
-                  <input id="articleID" type="text" placeholder="请输入博客标题" class="form-control" />
-                </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-xs-4 col-lg-2">
-                  <label>您的称呼:</label>
-                  <br />
-                </div>
-                <div class="col-xs-8 col-lg-10">
-                  <input id="authorName" type="text" placeholder="请输入您的称呼" class="form-control" />
-                </div>
-              </div>
-              <br />
-              <br />
-              <div class="row">
-                <div class="col-xs-12 col-lg-12">
-                  <script id="inputbox" name="content" type="text/plain" style="width:1000 height:600">
-快点来输入一千个字
-</script>
-                </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-xs-10 col-lg-11"></div>
-                <div class="col-xs-2 col-lg-1">
-                  <input name="submitButton" type="button" value="提交" width="50" />
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <form class="form-signin">
+        <h2 class="form-signin-heading">请登录</h2>
+        <label for="inputEmail" class="sr-only">您的邮箱</label>
+        <input id="inputEmail" type="email" placeholder="Email address" required="" autofocus="" class="form-control" />
+        <label for="inputPassword" class="sr-only">您的密码</label>
+        <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control" />
+        <button type="submit" class="btn btn-lg btn-primary btn-block">登录</button>
+      </form>
     </div>
-    <p>我的个人主页成功搭建了!</p>
-    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-    <script type="text/javascript">
-var ue= UE.getEditor(&#39;inputbox&#39;);
-</script>
-    <script src="/javascripts/jquery-1.12.3.min.js"></script>
-    <script src="/javascripts/bootstrap.min.js"></script>
   </body>
 </html>
