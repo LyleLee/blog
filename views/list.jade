@@ -1,19 +1,23 @@
 include 1nav
 br
 br
-div.container
-	- each val in article
-		div.row
-			div.col-xs-8.col-lg-8 
-				div.row
-					div.col-xs-6.col-lg-6 
-						h1(href) !{val.tittle}
-					div.col-xs-6.col-lg-6
-						label !{val.authorName}
-						label !{val.publishTime}
-				//- 内容行
-				div.row
-					div.col-xs-12.col-lg-12
-						p !{val.content}
-			div.col-xs-4.col-lg-4
-			//- 图片行
+block list-Content
+	div.container
+		- each val in article
+			div.row
+				//- 每一行是一片文章
+				div.col-xs-8.col-lg-8.divider-color
+					div.row.dark-primary-color.text-primary-color  
+						div.col-xs-6.col-lg-6
+								h1 !{val.tittle}
+						div.col-xs-6.col-lg-6
+							label !{val.authorName}
+							label !{val.publishTime}
+					//- 内容行
+					div.row.primary-text-color 
+						div.col-xs-12.col-lg-12
+							p !{val.content}
+				div.col-xs-4.col-lg-4
+				//- 图片行s
+			br
+			br
