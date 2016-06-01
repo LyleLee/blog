@@ -18,13 +18,22 @@ router.post('/edit',function(req,res,next)
 {
 	console.log("处理博客POST请求");
 	req.setEncoding('utf-8');
-	res.send(work.saveData(req));
+	work.saveData(req,res);
 });
+
 
 router.get('/list',function(req,res,next)
 {
 	console.log("请服务器列出博客列表");
 	work.getArticleList(res,6);
+		
+	//res.render('list',{article:article});//传入一个对象,这个对象一个键,一个值,这个键是可以直接在jade模板里面访问的
+});
+
+router.get('/list/:id',function(req,res,next)
+{
+	console.log("匹配一篇博客");
+	work.getOneArticle(req,res);
 		
 	//res.render('list',{article:article});//传入一个对象,这个对象一个键,一个值,这个键是可以直接在jade模板里面访问的
 });

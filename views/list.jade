@@ -8,9 +8,9 @@ block list-Content
 				//- 每一行是一片文章
 				div.col-xs-8.col-lg-8.divider-color
 					div.row.dark-primary-color.text-primary-color  
-						div.col-xs-6.col-lg-6
-								h1 !{val.tittle}
-						div.col-xs-6.col-lg-6
+						div.col-xs-8.col-lg-8
+							a.blog-title.text-primary-color(href =  "\/list\/"+val.articleID) !{val.tittle}
+						div.col-xs-4.col-lg-4
 							label !{val.authorName}
 							label !{val.publishTime}
 					//- 内容行
