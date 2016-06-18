@@ -8,15 +8,18 @@ block list-Content
 				//- 每一行是一片文章
 				div.col-xs-8.col-lg-8.divider-color
 					div.row.dark-primary-color.text-primary-color  
-						div.col-xs-8.col-lg-8
+						div.col-xs-7.col-lg-7
 							a.blog-title.text-primary-color(href =  "\/list\/"+val.articleID) !{val.tittle}
-						div.col-xs-4.col-lg-4
-							label !{val.authorName}
-							label !{val.publishTime}
+						div.col-xs-2.col-lg-2.blog-author-time
+							label 作者:!{val.authorName}
+						div.col-xs-3.col-lg-3.blog-author-time
+							label 时间:!{val.publishTime}
 					//- 内容行
 					div.row.primary-text-color 
 						div.col-xs-12.col-lg-12
 							p !{val.content}
+							- if (val.hasMore == 1)
+								a.moreIndicator(href =  "\/list\/"+val.articleID) 查看更多
 				div.col-xs-4.col-lg-4
 				//- 图片行s
 			br
