@@ -1,57 +1,52 @@
 br
 br
+br
+div#myCarousel.carousel.slide
+	ol.carousel-indicators
+		li.active(data-target='#myCarousel', data-slide-to='0')
+		li(data-target='#myCarousel', data-slide-to='1')
+		li(data-target='#myCarousel', data-slide-to='2')
+		li(data-target='#myCarousel', data-slide-to='3')
+	div.carousel-inner(role='listbox')
+		div.item.active
+			img.first-slide(src='images/a.png', alt='First slide')
+			div.container
+				div.varousel-caption
+					h1
+						境界,建造于心
+					p
+						什么时候忘记了墨水的香味,忘记了新鲜事物的好奇感,忘记了快乐还可以那么简单
+		div.item
+			img.second-slide(src='images/b.png', alt='Second slide')
+			div.container
+				div.varousel-caption
+					h1
+						诗人在哪里写出了那一句让人倾倒的诗
+					p
+						就像想象中活着的自己,或矗立于高山,或偎依在水旁,总有一首应景的音乐响起
+		div.item
+			img.third-slide(src='images/c.png', alt='Third slide')
+			div.container
+				div.varousel-caption
+					h1
+						她又在哪里说出了那一句感动的话
+					p
+						你好,竟然忘记了这么多学来的赞美, 记住了一句简单得平常的话
+		div.item
+			img.fourth-slide(src='images/d.png', alt='Four slide')
+			div.container
+				div.varousel-caption
+					h1
+						躁动,是想行动,最不需要压抑
+					p
+						技术在自己手里玩弄, 屏幕在眼前闪烁, 多折腾,多研究,信不信可以写出一朵花来
+		a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+			span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+		a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+			span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+
 div.container
-	div.row.row-offcanvas.row-offcanvas-right
-		div.col-xs-12.col-sm-9
-			p.pull-right.visible-xs
-				button.btn.btn-primary.btn-xs(type='button', data-toggle='offcanvas') Toggle nav
-			div.jumbotron
-				h1 Hello, world!
-				p
-					| This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.
-			div.row
-				div.col-xs-6.col-lg-4
-					h2 Heading
-					p
-						| Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					p
-						a.btn.btn-default(href='#', role='button') View details »
-				// /.col-xs-6.col-lg-4
-				div.col-xs-6.col-lg-4
-					h2 Heading
-					p
-						| Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					p
-						a.btn.btn-default(href='#', role='button') View details »
-				div.col-xs-6.col-lg-4
-					h2 Heading
-					p
-						| Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					p
-						a.btn.btn-default(href='#', role='button') View details »
-				// /.col-xs-6.col-lg-4
-				div.col-xs-6.col-lg-4
-					h2 Heading
-					p
-						| Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					p
-						a.btn.btn-default(href='#', role='button') View details »
-				// /.col-xs-6.col-lg-4
-			
-		div#sidebar.col-xs-6.col-sm-3.sidebar-offcanvas
-			div.list-group
-				a.list-group-item.active(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-				a.list-group-item(href='#') Link
-		// /.sidebar-offcanvas
-p= message
+	p= message
 
 script(src="/javascripts/jquery-1.12.3.min.js")
 script(src="/javascripts/bootstrap.min.js")
