@@ -1,0 +1,25 @@
+include 1nav
+br
+br
+block list-Content
+	div.container
+		- each val in article
+			//- 实际上循环没有什么卵用,因为只有一篇文章,只是我懒得改了
+			div.row.everyArticle
+				//- 每一行是一片文章
+				div.col-xs-12.col-lg-8.divider-color
+					//- 标题行
+					div.row 
+						div.col-xs-12.col-lg-7
+							a.blog-title(href =  "\/list\/"+val.articleID) !{val.tittle}
+						div.col-xs-12.col-lg-2.blog-author-time
+							作者:!{val.authorName}
+						div.col-xs-12.col-lg-3.blog-author-time
+							时间:!{val.publishTime}
+					//- 内容行
+					div.row.primary-text-color 
+						div.col-xs-12.col-lg-12
+							p !{val.content}
+							- if (val.hasMore == 1)
+								a.moreIndicator(href =  "\/list\/"+val.articleID) 查看更多
+				div.col-xs-12.col-lg-4

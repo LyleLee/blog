@@ -25,7 +25,7 @@ router.post('/edit',function(req,res,next)
 router.get('/list',function(req,res,next)
 {
 	console.log("请服务器列出博客列表");
-	work.getArticleList(res,6);
+	work.getArticleList(req,res);
 		
 	//res.render('list',{article:article});//传入一个对象,这个对象一个键,一个值,这个键是可以直接在jade模板里面访问的
 });

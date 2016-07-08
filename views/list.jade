@@ -4,23 +4,55 @@ br
 block list-Content
 	div.container
 		- each val in article
-			div.row
+			div.row.everyArticle
 				//- 每一行是一片文章
-				div.col-xs-12.col-lg-8.divider-color
-					div.row  
-						div.col-xs-7.col-lg-7
+				div.col-xs-12.col-lg-8.divider-color.separateLine
+					div.row 
+						div.col-xs-12.col-lg-7
 							a.blog-title(href =  "\/list\/"+val.articleID) !{val.tittle}
-						div.col-xs-2.col-lg-2.blog-author-time
-							label 作者:!{val.authorName}
-						div.col-xs-3.col-lg-3.blog-author-time
-							label 时间:!{val.publishTime}
+						div.col-xs-12.col-lg-2.blog-author-time
+							作者:!{val.authorName}
+						div.col-xs-12.col-lg-3.blog-author-time
+							时间:!{val.publishTime}
 					//- 内容行
 					div.row.primary-text-color 
 						div.col-xs-12.col-lg-12
 							p !{val.content}
 							- if (val.hasMore == 1)
 								a.moreIndicator(href =  "\/list\/"+val.articleID) 查看更多
+				//- 图片行
 				div.col-xs-12.col-lg-4
-				//- 图片行s
-			br
-			br
+	div.container
+		div.pagination-custom
+			ul.pagination.pagination-lg
+				- if(totalPage < pagination)//只要一个网页就可以显示所有分页了
+					li.disabled(alt = "没有上一页了")
+						a(href="#") &laquo;
+					- for(var i = 0; i <= totalPage; i++)//传过来的totalpage是从0开始的,加入是3, 实际上有4个分页
+						- if(thisPage == i)//显示当前页码被选中
+							li.active
+								a(href="/list?page=#{i}") #{i}
+						- else//其他页码不需要选中
+							li
+								a(href="/list?page=#{i}") #{i}
+					li.disabled(alt = "没有下一页了")
+						a(href="#") &raquo;
+				- else//一个网页显示不了所有页码
+					- var begin = Math.floor(thisPage/pagination) *pagination;
+					- var possibleLast = beginPage+ pagination;					
+					- var realLast	= possibleLast > totalPage ? totalPage : possibleLast ;
+					li
+						a(href="/list?page="+begin-1) &laquo;//上一个网页中的最后一个
+					- for(var i = begin; i < realLast; i++)
+						- if(thisPage == i)
+							li.active
+								a(href="/list?page=#{i}") #{i}
+						- else
+							li
+								a(href="/list?page=#{i}") #{i}
+					- if(possibleLast != realLast) //证明这个网页已经列出了最后的所有分页,禁用下一组分页按钮.
+						li.disabled
+							a(href="#"+realLast) &raquo;
+					- else
+						li
+							a(href="/list?page="+realLast) &raquo;
